@@ -1,7 +1,7 @@
 import { render } from '../../node_modules/lit-html/lit-html.js'
 
 // 1 import result from navView - renderNavigation
-import { renderNavigation } from '../views/navigationViews.js';
+import { renderNavigation } from '../views/navigationView.js';
 
 
 const navigationElement = document.querySelector('header.navigation');

@@ -6,7 +6,7 @@ const USER_KEY = 'user';
 // login api
 export const login = (username, password) => {
     return request.post(api.login, { username, password })
-        .then((user) => {
+        .then(user => {
             saveUser(user);
             return user;
         });

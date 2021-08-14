@@ -22,8 +22,9 @@ const loggedUserNavigation = (username) => html `
 
 const navigationTemplate = (user) => html `
     <nav>
-        <a class="active" href="/">Home</a>
+        <a class="active" href="/home">Home</a>
         <a href="/listing">All Listings</a>
+        <!-- <a href="/catalog">All Listings</a> -->
         <a href="#">By Year</a>
         ${user
             ? loggedUserNavigation(user.username)

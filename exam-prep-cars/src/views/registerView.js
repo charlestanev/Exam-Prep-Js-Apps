@@ -1,6 +1,6 @@
 import { html } from '../../node_modules/lit-html/lit-html.js';
 
-import * as authservice from '../services/authService.js';
+import * as authService from '../services/authService.js';
 
 const registerTemplate = (onSubmit) => html `
     <!-- Register Page -->
@@ -42,10 +42,10 @@ export function renderRegister(ctx) {
         let password = formData.get('password');
         let repeatPass = formData.get('repeatPass');
 
-        authservice.register(username, password)
+        authService.register(username, password)
             .then(() => {
                 ctx.page.redirect('/listing');
-            })
+            });
 
     }
 

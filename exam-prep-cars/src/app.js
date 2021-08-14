@@ -12,15 +12,19 @@ import { authMiddleware } from './middlewares/authMiddleware.js';
 import { renderLogout } from './views/logoutView.js';
 import { renderHome } from './views/homeView.js';
 import { renderListing } from './views/listingView.js';
+import { renderCreateCar } from './views/createCarView.js';
 
 page(authMiddleware);
 page(navigationMiddleware);
 page(renderMiddleware);
 
 page('/', renderHome);
+
 page('/login', renderLogin);
 page('/register', renderRegister);
 page('/logout', renderLogout);
+
 page('/listing', renderListing);
+page('/create', renderCreateCar);
 
 page.start();

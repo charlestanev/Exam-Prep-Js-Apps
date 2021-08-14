@@ -15,6 +15,7 @@ const carTemplate = (car) => html `
         </div>
         <div class="data-buttons">
             <a href="/listing/${car._id}" class="button-carDetails">Details</a>
+            <!-- <a href="/details/${car._id}" class="button-carDetails">Details</a> -->
         </div>
     </div>
 </div>
@@ -30,7 +31,6 @@ const listingTemplate = (cars = []) => html `
     <section id="car-listings">
         <h1>Car Listings</h1>
         <div class="listings">
-
             ${cars.map(carTemplate)}
                 
             ${cars.length == 0
@@ -39,7 +39,7 @@ const listingTemplate = (cars = []) => html `
             }
 
         </div>
-        </section>
+    </section>
 `;
 
 export const renderListing = (ctx) => {

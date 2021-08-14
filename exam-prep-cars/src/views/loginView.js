@@ -1,6 +1,6 @@
 import { html } from '../../node_modules/lit-html/lit-html.js';
 
-import * as authservice from '../services/authService.js';
+import * as authService from '../services/authService.js';
 
 const loginTemplate = (onSubmit) => html `
     <!-- Login Page -->
@@ -36,10 +36,10 @@ export function renderLogin(ctx) {
         let username = formData.get('username');
         let password = formData.get('password');
 
-        authservice.login(username, password)
+        authService.login(username, password)
             .then(() => {
                 ctx.page.redirect('/listing');
-            })
+            });
 
     }
 

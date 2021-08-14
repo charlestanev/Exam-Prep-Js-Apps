@@ -2,13 +2,14 @@ import * as authService from '../services/authService.js';
 
 function request(method, url, data) {
     let options = {};
+
     let user = authService.getUser();
 
     if (method != 'GET') {
         options = {
             method,
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             },
             body: JSON.stringify(data)
         }
@@ -20,13 +21,14 @@ function request(method, url, data) {
             'X-Authorization': user.accessToken
         }
     }
+
     return fetch(url, options)
         .then(res => {
             if (res.url.endsWith('logout')) {
                 return res;
             }
-            return res.json();
-        });
+            return res.json()
+        })
 
 }
 
