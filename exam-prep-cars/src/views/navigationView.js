@@ -14,7 +14,7 @@ const loggedUserNavigation = (username) => html `
 <!-- Logged users -->
     <div id="profile">
         <a>Welcome ${username}</a>
-        <a href="/profile">My Listings</a>
+        <a href="/my-listing">My Listings</a>
         <a href="/create">Create Listing</a>
         <a href="/logout">Logout</a>
     </div>
@@ -25,7 +25,7 @@ const navigationTemplate = (user) => html `
         <a class="active" href="/home">Home</a>
         <a href="/listing">All Listings</a>
         <!-- <a href="/catalog">All Listings</a> -->
-        <a href="#">By Year</a>
+        <a href="/search">By Year</a>
         ${user
             ? loggedUserNavigation(user.username)
             : guestUserNavigation()}
